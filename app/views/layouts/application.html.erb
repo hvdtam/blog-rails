@@ -1,0 +1,41 @@
+<body>
+<!--Header-->
+<header>
+  <nav class="navbar bg-dark">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <%= link_to 'Manage Posts', posts_path, class: "nav-link" %>
+      </li>
+      <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link text-nowrap" %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "Log in", new_user_session_path, class: "nav-link text-nowrap" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sign up", new_user_registration_path, class: "nav-link text-nowrap" %>
+        </li>
+      <% end %>
+    </ul>
+  </nav>
+</header>
+<%= csrf_meta_tags %>
+<%= csp_meta_tag %>
+
+<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+<%= yield %>
+</body>
+<!--Footer-->
+<footer class="p-4 bg-light">
+  <div class="container text-muted">
+    <p> 2020 @ Blog </p>
+    <p class="float-right"><a href="#">Back to top</a></p>
+  </div>
+</footer>
+</body>

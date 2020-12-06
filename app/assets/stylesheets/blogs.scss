@@ -1,0 +1,20 @@
+// Place all the styles related to the Blogs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.blog-page{
+  max-width: 880px;
+  margin: 0 auto;
+  padding-top: 10px;
+
+  .blog {
+    padding: 40px 70px;
+    img{
+      border-radius: 8px;
+    }
+    .title {
+      font-size: 34px;
+      font-weight: bold;
+      padding-bottom: 30px;
+    }
+  }
+}
